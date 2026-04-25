@@ -1,0 +1,213 @@
+.hero {
+  height: 100vh;
+  min-height: 640px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding-top: 68px;
+}
+
+.hero-layout {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 4px;
+  flex: 1;
+}
+
+/* Editorial image blocks */
+.hero-img-block {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-main {
+  height: 100%;
+}
+
+.hero-main .hero-img-block {
+  height: 100%;
+}
+
+.hero-bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.hero-img-left {
+  background: linear-gradient(160deg, #0a0f1a 0%, #111820 30%, #1a2535 60%, #0d1520 100%);
+}
+
+.hero-img-inner {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background:
+    linear-gradient(45deg, transparent 30%, rgba(0,255,106,0.04) 50%, transparent 70%),
+    repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 40px,
+      rgba(255,255,255,0.01) 40px,
+      rgba(255,255,255,0.01) 41px
+    );
+  pointer-events: none;
+}
+
+.hero-img-top {
+  background: linear-gradient(135deg, #1a0a0a 0%, #2d1515 50%, #1a0808 100%);
+  flex: 1;
+}
+
+.hero-img-bottom {
+  background: linear-gradient(135deg, #0a0a1a 0%, #151525 50%, #0a0a18 100%);
+  flex: 1;
+}
+
+.hero-side {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hero-side .hero-img-block { flex: 1; }
+
+.hero-side-label {
+  position: absolute;
+  bottom: 20px; left: 20px;
+  font-family: var(--font-heading);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--white);
+  opacity: 0.8;
+  z-index: 3;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+}
+
+/* Hero Content */
+.hero-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 48px;
+  background: linear-gradient(to top, rgba(10,10,10,0.85) 0%, rgba(10,10,10,0.2) 60%, transparent 100%);
+  z-index: 3;
+}
+
+.hero-eyebrow {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 16px;
+}
+
+.hero-headline {
+  font-size: clamp(3.5rem, 7vw, 7rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: 0.92;
+  letter-spacing: -0.03em;
+  color: var(--white);
+  margin-bottom: 20px;
+}
+
+.hero-headline span { color: var(--green); }
+
+.hero-sub {
+  font-size: 1rem;
+  color: rgba(245,245,240,0.7);
+  line-height: 1.5;
+  margin-bottom: 32px;
+  max-width: 360px;
+}
+
+.hero-ctas {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn-hero-primary {
+  background: var(--green);
+  color: var(--black);
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 14px 32px;
+  border-radius: var(--radius);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.btn-hero-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 255, 106, 0.3);
+}
+
+.btn-hero-secondary {
+  background: transparent;
+  color: var(--white);
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 14px 32px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(245,245,240,0.4);
+  transition: border-color var(--transition), color var(--transition);
+}
+
+.btn-hero-secondary:hover {
+  border-color: var(--white);
+  color: var(--white);
+}
+
+/* Scroll indicator */
+.hero-scroll {
+  position: absolute;
+  bottom: 32px; right: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  z-index: 3;
+}
+
+.hero-scroll span {
+  font-size: 9px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(245,245,240,0.4);
+  writing-mode: vertical-rl;
+}
+
+.scroll-line {
+  width: 1px;
+  height: 60px;
+  background: linear-gradient(to bottom, rgba(245,245,240,0.4) 0%, transparent 100%);
+  animation: scrollAnim 2s ease-in-out infinite;
+}
+
+@keyframes scrollAnim {
+  0%, 100% { transform: scaleY(1); opacity: 0.4; }
+  50% { transform: scaleY(0.5); opacity: 0.1; }
+}
+
+@media (max-width: 768px) {
+  .hero-layout { grid-template-columns: 1fr; }
+  .hero-side { display: none; }
+  .hero-content { padding: 32px 24px; }
+  .hero-headline { font-size: 3.5rem; }
+}

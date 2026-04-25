@@ -1,0 +1,107 @@
+.lookbook-page { padding-top: 68px; padding-bottom: 80px; }
+
+.lb-hero {
+  padding: 80px 0;
+  background: linear-gradient(160deg, #0a0a0a 0%, #111111 100%);
+  border-bottom: 1px solid rgba(0,255,106,0.15);
+  margin-bottom: 48px;
+}
+
+.lb-eyebrow {
+  font-size: 12px;
+  color: var(--green);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.lb-title {
+  font-size: clamp(3rem, 8vw, 7rem);
+  font-weight: 800;
+  color: var(--white);
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+}
+
+.lb-sub {
+  margin-top: 16px;
+  font-size: 15px;
+  color: var(--gray-light);
+  max-width: 480px;
+}
+
+/* Masonry */
+.lb-masonry {
+  columns: 3;
+  column-gap: 12px;
+}
+
+.lb-item {
+  break-inside: avoid;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  height: 260px;
+  transition: transform 0.4s ease;
+}
+
+.lb-item.tall { height: 400px; }
+
+.lb-item:hover { transform: scale(1.01); }
+
+.lb-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.lb-item:hover .lb-bg-img { transform: scale(1.08); }
+
+.lb-hover {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,255,106,0.07);
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.lb-item:hover .lb-hover { opacity: 1; }
+
+.lb-info {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 40px 20px 20px;
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%);
+}
+
+.lb-sub-label {
+  display: block;
+  font-size: 10px;
+  color: var(--green);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+
+.lb-label {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 900px) {
+  .lb-masonry { columns: 2; }
+}
+
+@media (max-width: 560px) {
+  .lb-masonry { columns: 1; }
+  .lb-item, .lb-item.tall { height: 220px; }
+}

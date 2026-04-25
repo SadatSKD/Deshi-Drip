@@ -1,0 +1,219 @@
+/* ── Order Success ─────────────────────────────────────── */
+.success-page {
+  min-height: 100vh;
+  padding: 120px 0 60px;
+  display: flex;
+  align-items: center;
+}
+
+.success-card {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+  background: var(--gray);
+  border-radius: 12px;
+  padding: 48px 40px;
+  border: 1px solid var(--gray-2);
+}
+
+.success-check {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--green);
+  color: var(--black);
+  font-size: 2rem;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+  animation: checkPop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes checkPop {
+  0% { transform: scale(0); opacity: 0; }
+  60% { transform: scale(1.2); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.success-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.6rem, 4vw, 2.5rem);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 8px;
+}
+
+.success-title span { color: var(--green); }
+
+.success-sub {
+  color: var(--gray-light);
+  font-size: 15px;
+  margin-bottom: 32px;
+}
+
+/* Details */
+.success-details {
+  text-align: left;
+  background: var(--black);
+  border-radius: 8px;
+  padding: 20px 24px;
+  margin-bottom: 24px;
+  border: 1px solid var(--gray-2);
+}
+
+.sd-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--gray-2);
+}
+
+.sd-row:last-child { border-bottom: none; }
+
+.sd-label {
+  font-size: 12px;
+  color: var(--gray-light);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.sd-value {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.sd-order-num {
+  color: var(--green);
+  font-size: 16px;
+  letter-spacing: 0.08em;
+}
+
+.sd-status {
+  color: var(--terracotta);
+}
+
+.free-delivery {
+  color: var(--green);
+}
+
+/* Payment instruction */
+.payment-instruction {
+  text-align: left;
+  background: rgba(0, 255, 106, 0.05);
+  border: 1px solid rgba(0, 255, 106, 0.2);
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin-bottom: 24px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--white);
+}
+
+.payment-instruction strong {
+  color: var(--green);
+}
+
+/* Timeline */
+.success-timeline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  margin-bottom: 32px;
+  padding: 0 20px;
+}
+
+.tl-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.tl-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--gray-2);
+  border: 2px solid var(--gray-2);
+  transition: all 0.3s;
+}
+
+.tl-step.active .tl-dot {
+  background: var(--green);
+  border-color: var(--green);
+  box-shadow: 0 0 12px rgba(0, 255, 106, 0.4);
+}
+
+.tl-step span {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gray-light);
+}
+
+.tl-step.active span {
+  color: var(--green);
+  font-weight: 700;
+}
+
+.tl-line {
+  height: 2px;
+  width: 40px;
+  background: var(--gray-2);
+  flex-shrink: 0;
+  margin-bottom: 20px;
+}
+
+/* Actions */
+.success-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.btn-success-home {
+  background: var(--green);
+  color: var(--black);
+  padding: 14px 28px;
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: var(--radius);
+  transition: opacity var(--transition);
+}
+
+.btn-success-home:hover { opacity: 0.85; }
+
+.btn-success-alt {
+  background: transparent;
+  border: 1px solid var(--green);
+  color: var(--green);
+  padding: 14px 28px;
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: var(--radius);
+  transition: background var(--transition), color var(--transition);
+}
+
+.btn-success-alt:hover {
+  background: var(--green);
+  color: var(--black);
+}
+
+.success-note {
+  font-size: 12px;
+  color: var(--gray-light);
+}

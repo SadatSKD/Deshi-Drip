@@ -1,0 +1,106 @@
+.gender-page { padding-top: 68px; }
+
+.gender-hero {
+  padding: 64px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.gender-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 60px,
+    rgba(0,255,106,0.02) 60px,
+    rgba(0,255,106,0.02) 61px
+  );
+}
+
+.gender-eyebrow {
+  font-size: 12px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 8px;
+  font-weight: 600;
+  position: relative;
+  z-index: 1;
+}
+
+.gender-title {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--white);
+  line-height: 1;
+  position: relative;
+  z-index: 1;
+}
+
+.gender-title span { color: var(--green); }
+
+.gender-sub {
+  margin-top: 12px;
+  font-size: 14px;
+  color: var(--gray-light);
+  position: relative;
+  z-index: 1;
+}
+
+/* Filter bar */
+.filter-bar {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 32px 0 24px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  margin-bottom: 32px;
+}
+
+.filter-btn {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.12);
+  color: var(--gray-light);
+  font-family: var(--font-heading);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 8px 18px;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.filter-btn:hover { border-color: var(--green); color: var(--green); }
+
+.filter-btn.active {
+  background: var(--green);
+  color: var(--black);
+  border-color: var(--green);
+}
+
+.products-grid-page {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding-bottom: 80px;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 80px 0;
+  color: var(--gray-light);
+  font-size: 16px;
+}
+
+@media (max-width: 900px) {
+  .products-grid-page { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 560px) {
+  .products-grid-page { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,144 @@
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.section-dark {
+  background: var(--gray);
+  margin: 0 -24px;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+/* Brand Story */
+.brand-story {
+  padding: 100px 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.brand-story::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(0,255,106,0.04) 0%, transparent 70%);
+}
+
+.brand-quote {
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-style: italic;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--white);
+  max-width: 800px;
+  margin: 0 auto 48px;
+  position: relative;
+}
+
+.brand-quote em { color: var(--green); font-style: normal; }
+
+.brand-pills {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.pill {
+  background: var(--gray);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: var(--white);
+  font-size: 14px;
+  font-weight: 500;
+  padding: 10px 24px;
+  border-radius: 100px;
+  transition: border-color var(--transition), color var(--transition);
+}
+
+.pill:hover { border-color: var(--green); color: var(--green); }
+
+/* Lookbook */
+.lookbook-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 260px 260px;
+  gap: 12px;
+}
+
+.lookbook-block {
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+
+.lb-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.lookbook-block:hover .lb-bg-img { transform: scale(1.1); }
+
+.lookbook-block.wide {
+  grid-column: span 2;
+}
+
+.lookbook-hover {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,255,106,0.08);
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.lookbook-block:hover .lookbook-hover { opacity: 1; }
+
+.lookbook-block:hover { transform: scale(0.99); }
+
+.lookbook-label {
+  position: absolute;
+  bottom: 20px; left: 20px;
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(245,245,240,0.7);
+  transition: color var(--transition);
+}
+
+.lookbook-block:hover .lookbook-label { color: var(--green); }
+
+/* Testimonials grid */
+.testi-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 1024px) {
+  .categories-grid { grid-template-columns: repeat(2, 1fr); }
+  .products-grid { grid-template-columns: repeat(2, 1fr); }
+  .lookbook-grid { grid-template-columns: repeat(2, 1fr); }
+  .lookbook-block.wide { grid-column: span 1; }
+  .testi-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .categories-grid { grid-template-columns: repeat(2, 1fr); }
+  .products-grid { grid-template-columns: 1fr; }
+  .lookbook-grid { grid-template-columns: 1fr; grid-template-rows: auto; }
+  .lookbook-block { height: 200px; }
+  .testi-grid { grid-template-columns: 1fr; }
+}
